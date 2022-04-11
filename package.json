@@ -7,7 +7,7 @@
     "tests": "mocha --require ts-node/register .test/**/*.ts",
     "build": "tsc",
     "start": "npm version patch",
-    "release": "tsc && npm publish"
+    "release": "npm version patch & tsc && npm publish"
   },
   "repository": {
     "type": "git",
