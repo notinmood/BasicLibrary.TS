@@ -1,3 +1,14 @@
+/*
+ * @Author: Shandong Xiedali
+ * @Mail: 9727005@qq.com
+ * @Date: 2022-04-10 08:44:19
+ * @LastEditors: Shandong Xiedali
+ * @LastEditTime: 2022-04-11 14:39:21
+ * @FilePath: \BasicLibrary.TS\src\data\ObjectHelper.ts
+ * @Description: 
+ * Copyright (c) 2022 by Hiland & RainyTop, All Rights Reserved. 
+ */
+
 export class ObjectHelper {
     /**
      * 合并两个对象，并返回两个对象的联合类型
@@ -6,13 +17,13 @@ export class ObjectHelper {
      * @returns 
      */
     static combine<T, U>(first: T, second: U): T & U {
-        let result = <T & U>({} as unknown);
+        const result = <T & U>({} as any);
 
-        for (let id in first) {
+        for (const id in first) {
             (<any>result)[id] = (<any>first)[id];
         }
 
-        for (let id in second) {
+        for (const id in second) {
             if (!(<any>result).hasOwnProperty(id)) {
                 (<any>result)[id] = (<any>second)[id];
             }
@@ -27,9 +38,9 @@ export class ObjectHelper {
      * @returns 
      */
     static combineAll(...objects: any[]) {
-        let result = {};
+        const result = {};
         objects.forEach(element => {
-            for (let id in element) {
+            for (const id in element) {
                 (<any>result)[id] = element[id];
             }
         });
