@@ -6,8 +6,7 @@
   "scripts": {
     "tests": "mocha --require ts-node/register .test/**/*.ts",
     "build": "tsc",
-    "start": "npm version patch",
-    "release": "npm version patch & tsc && npm publish"
+    "pub": "npm version patch & tsc && npm publish"
   },
   "repository": {
     "type": "git",
