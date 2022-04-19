@@ -2,9 +2,11 @@
   "name": "basiclibrary.ts",
   "version": "1.0.6",
   "description": "企业级的TypeScript类库",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "tests": "mocha --require ts-node/register .test/**/*.ts",
+    "test": "mocha --require ts-node/register .test/**/*.ts",
     "build": "tsc",
     "pub": "npm version patch & tsc && npm publish"
   },

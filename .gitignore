@@ -106,3 +106,4 @@ dist
 # 是否对编译后的 JavaScript 进行提交，根据具体场景设置。
 # /lib 为编译的后的 JavaScript
 #/lib
+/lib/
