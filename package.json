@@ -1,45 +1,45 @@
 {
-    "name"           : "basiclibrary.ts",
-    "version"        : "1.0.6",
-    "description"    : "企业级的TypeScript类库",
-    "//main"         : "main：暴露给外部的入口文件",
-    "main"           : "lib/index.js",
-    "//types"        : "types：暴露给外部的类型定义文件",
-    "types"          : "lib/index.d.ts",
-    "scripts"        : {
+    "name": "basiclibrary.ts",
+    "version": "1.0.7",
+    "description": "企业级的TypeScript类库",
+    "//main": "main：暴露给外部的入口文件",
+    "main": "lib/index.js",
+    "//types": "types：暴露给外部的类型定义文件",
+    "types": "lib/index.d.ts",
+    "scripts": {
         "tests": "mocha --require ts-node/register .test/**/*.ts",
-        "test" : "mocha --require ts-node/register .test/**/*.ts",
+        "test": "mocha --require ts-node/register .test/**/*.ts",
         "build": "tsc",
-        "pub"  : "npm version patch & tsc && npm publish"
+        "pub": "npm version patch & tsc && npm publish"
     },
-    "repository"     : {
+    "repository": {
         "type": "git",
-        "url" : "git+https://github.com/notinmood/BasicLibrary.TS.git"
+        "url": "git+https://github.com/notinmood/BasicLibrary.TS.git"
     },
-    "author"         : "",
-    "license"        : "ISC",
-    "bugs"           : {
+    "author": "",
+    "license": "ISC",
+    "bugs": {
         "url": "https://github.com/notinmood/BasicLibrary.TS/issues"
     },
-    "homepage"       : "https://github.com/notinmood/BasicLibrary.TS#readme",
+    "homepage": "https://github.com/notinmood/BasicLibrary.TS#readme",
     "devDependencies": {
-        "@types/chai"                     : "^4.3.0",
-        "@types/mocha"                    : "^9.1.0",
+        "@types/chai": "^4.3.0",
+        "@types/mocha": "^9.1.0",
         "@typescript-eslint/eslint-plugin": "^5.18.0",
-        "@typescript-eslint/parser"       : "^5.18.0",
-        "chai"                            : "^4.3.6",
-        "eslint"                          : "^8.13.0",
-        "eslint-config-prettier"          : "^8.5.0",
-        "eslint-plugin-node"              : "^11.1.0",
-        "mocha"                           : "^9.2.2",
-        "prettier-eslint"                 : "^13.0.0",
-        "ts-node"                         : "^10.7.0",
-        "typescript"                      : "^4.6.3"
+        "@typescript-eslint/parser": "^5.18.0",
+        "chai": "^4.3.6",
+        "eslint": "^8.13.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-node": "^11.1.0",
+        "mocha": "^9.2.2",
+        "prettier-eslint": "^13.0.0",
+        "ts-node": "^10.7.0",
+        "typescript": "^4.6.3"
     },
-    "dependencies"   : {},
-    "eslintConfig"   : {
-        "root"   : true,
-        "parser" : "@typescript-eslint/parser",
+    "dependencies": {},
+    "eslintConfig": {
+        "root": true,
+        "parser": "@typescript-eslint/parser",
         "plugins": [
             "@typescript-eslint"
         ],
@@ -49,12 +49,15 @@
             "plugin:node/recommended",
             "prettier"
         ],
-        "rules"  : {
+        "rules": {
             "node/no-unsupported-features/es-syntax": 0,
-            "@typescript-eslint/no-explicit-any"    : 0,
-            "no-prototype-builtins"                 : 2,
-            "quotes"                                : [2, "double"],
-            "node/no-missing-import"                : 0,
+            "@typescript-eslint/no-explicit-any": 0,
+            "no-prototype-builtins": 2,
+            "quotes": [
+                2,
+                "double"
+            ],
+            "node/no-missing-import": 0,
             "@typescript-eslint/no-inferrable-types": 0
         }
     }
