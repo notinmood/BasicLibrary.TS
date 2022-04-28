@@ -1,3 +1,5 @@
 /.test
+/.idea
+/.vscode
 /src
 /BasicLibrary.TS.code-workspace
