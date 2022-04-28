@@ -1,0 +1,35 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <option name="FORMATTER_TAGS_ENABLED" value="true" />
+    <JSCodeStyleSettings version="0">
+      <option name="ALIGN_OBJECT_PROPERTIES" value="2" />
+      <option name="ALIGN_VAR_STATEMENTS" value="1" />
+      <option name="REFORMAT_C_STYLE_COMMENTS" value="true" />
+      <option name="FORCE_QUOTE_STYlE" value="true" />
+      <option name="OBJECT_LITERAL_WRAP" value="0" />
+    </JSCodeStyleSettings>
+    <JSON>
+      <option name="PROPERTY_ALIGNMENT" value="2" />
+      <option name="ARRAY_WRAPPING" value="0" />
+    </JSON>
+    <TypeScriptCodeStyleSettings version="0">
+      <option name="ALIGN_OBJECT_PROPERTIES" value="2" />
+      <option name="ALIGN_VAR_STATEMENTS" value="1" />
+      <option name="REFORMAT_C_STYLE_COMMENTS" value="true" />
+      <option name="FORCE_QUOTE_STYlE" value="true" />
+      <option name="ALIGN_IMPORTS" value="true" />
+      <option name="ALIGN_UNION_TYPES" value="true" />
+    </TypeScriptCodeStyleSettings>
+    <codeStyleSettings language="JavaScript">
+      <option name="ALIGN_MULTILINE_CHAINED_METHODS" value="true" />
+      <option name="ALIGN_MULTILINE_PARAMETERS_IN_CALLS" value="true" />
+      <option name="ALIGN_MULTILINE_ARRAY_INITIALIZER_EXPRESSION" value="true" />
+    </codeStyleSettings>
+    <codeStyleSettings language="TypeScript">
+      <option name="ALIGN_MULTILINE_CHAINED_METHODS" value="true" />
+      <option name="ALIGN_MULTILINE_BINARY_OPERATION" value="true" />
+      <option name="ALIGN_MULTILINE_ARRAY_INITIALIZER_EXPRESSION" value="true" />
+      <option name="ENUM_CONSTANTS_WRAP" value="0" />
+    </codeStyleSettings>
+  </code_scheme>
+</component>

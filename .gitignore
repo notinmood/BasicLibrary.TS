@@ -107,3 +107,4 @@ dist
 # /lib 为编译的后的 JavaScript
 #/lib
 /lib/
+/lib
