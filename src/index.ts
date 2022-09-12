@@ -14,6 +14,8 @@
 // +--------------------------------------------------------------------------
 
 
-export { StringHelper } from "./data/StringHelper";
-export { ObjectHelper } from "./data/ObjectHelper";
-export { NumberHelper } from "./data/NumberHelper";
+export {StringHelper} from "./data/StringHelper";
+export {ObjectHelper} from "./data/ObjectHelper";
+export {NumberHelper} from "./data/NumberHelper";
+
+export {Singleton} from "./pattern/Singleton";
