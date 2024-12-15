@@ -1,6 +1,6 @@
 {
     "name": "basiclibrary.ts",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "description": "企业级的TypeScript类库",
     "//main": "main：暴露给外部的入口文件",
     "main": "lib/commonjs/index.js",
