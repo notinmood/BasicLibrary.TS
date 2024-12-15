@@ -1,5 +1,8 @@
 /.test
 /.idea
 /.vscode
-/src
+/node_modules
+/dist
+/build
+/coverage
 /BasicLibrary.TS.code-workspace

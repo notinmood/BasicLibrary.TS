@@ -16,7 +16,7 @@ export class StringHelper {
      * @param {*} length 截取长度
      * @param {*} positive 截取方向（true表示正向，false表示反向）
      */
-    static getSubString = function (wholeString: string, length: number, positive = true): string {
+    static getSubString = function (wholeString: string, length: number, positive: any = true): string {
         const realLength = wholeString.length;
         let result;
         if (length >= realLength) {
@@ -156,7 +156,7 @@ export class StringHelper {
      * @param separator
      * @returns {*}
      */
-    static implode(arrayData: string[], separator = ",") {
+    static implode(arrayData: string[], separator = ","): any {
         return arrayData.join(separator);
     }
 
@@ -293,5 +293,9 @@ export class StringHelper {
     static trimBoth = function (stringData: string, target: string = " ") {
         const temp = StringHelper.trimLeft(stringData, target);
         return StringHelper.trimRight(temp, target);
+    }
+
+    static hello(stringData: string)   {
+        return "hello world";
     }
 }
