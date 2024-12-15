@@ -6,6 +6,14 @@
     "main": "lib/index.js",
     "//types": "types：暴露给外部的类型定义文件",
     "types": "lib/index.d.ts",
+    "files": [
+        "dist/",
+        "lib/",
+        "src/",
+        "package.json",
+        "LICENSE",
+        "README.md"
+    ],
     "scripts": {
         "test": "mocha --require ts-node/register .test/**/*.ts",
         "t": "mocha --require ts-node/register .test/**/*.ts",
