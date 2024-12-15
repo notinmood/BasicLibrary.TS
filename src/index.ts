@@ -19,3 +19,5 @@ export {ObjectHelper} from "./data/ObjectHelper";
 export {NumberHelper} from "./data/NumberHelper";
 
 export {Singleton} from "./pattern/Singleton";
+export {Bar}       from "./bar";
+export {Foo}       from "./foo";
