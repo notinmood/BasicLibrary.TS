@@ -34,6 +34,10 @@ class Bar {
     cmx() {
         return "cmx-";
     }
+
+    cmm = () => {
+        return "cmm";
+    }
 }
 
 export {Bar};

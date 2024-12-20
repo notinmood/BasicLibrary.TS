@@ -19,7 +19,7 @@
 如果要编译指定类型的JavaScript代码，可以在WebStorm的终端中执行以下命令：
 ```shell
 tsc -p./tsconfig.commonjs.json # 编译 commonjs 格式的 JavaScript 代码
-tsc -p./tsconfig.es.json # 编译 es(ES6, ES2015等) 格式的 JavaScript 代码
+tsc -p./tsconfig.esm.json # 编译 es(ES6, ES2015等) 格式的 JavaScript 代码
 ```
 
 ## 类库发布流程

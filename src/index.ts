@@ -14,10 +14,10 @@
 // +--------------------------------------------------------------------------
 
 
-export {StringHelper} from "./data/StringHelper";
-export {ObjectHelper} from "./data/ObjectHelper";
-export {NumberHelper} from "./data/NumberHelper";
+export {StringHelper} from "./data/stringHelper";
+export {ObjectHelper} from "./data/objectHelper";
+export {NumberHelper} from "./data/numberHelper";
 
-export {Singleton} from "./pattern/Singleton";
-export {Bar}       from "./bar";
-export {Foo}       from "./foo";
+export {Singleton} from "./pattern/singleton";
+export {Bar}       from "./misc/bar";
+export {Foo}       from "./misc/foo";
