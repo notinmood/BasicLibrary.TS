@@ -16,7 +16,7 @@ export class StringHelper {
      * @param {*} length 截取长度
      * @param {*} positive 截取方向（true表示正向，false表示反向）
      */
-    static getSubString = function (wholeString: string, length: number, positive: any = true): string {
+    static getSubString(wholeString: string, length: number, positive: any = true): string {
         const realLength = wholeString.length;
         let result;
         if (length >= realLength) {
@@ -34,7 +34,7 @@ export class StringHelper {
      * @param {*} wholeString
      * @param {*} length
      */
-    static right = function (wholeString: string, length: number) {
+    static right(wholeString: string, length: number) {
         return StringHelper.getSubString(wholeString, length, false);
     };
 
@@ -43,7 +43,7 @@ export class StringHelper {
      * @param {*} wholeString
      * @param {*} length
      */
-    static left = function (wholeString: string, length: number) {
+    static left(wholeString: string, length: number) {
         return StringHelper.getSubString(wholeString, length, true);
     };
 
@@ -51,7 +51,7 @@ export class StringHelper {
      * 将字符串进行方向反转
      * @param {*} stringData 待反转的字符串
      */
-    static reverse = function (stringData: string) {
+    static reverse(stringData: string) {
         return stringData.split("").reverse().join("");
     };
 
@@ -60,7 +60,7 @@ export class StringHelper {
      * @param {*} wholeString 全字符串
      * @param {*} target 被包含的子字符串
      */
-    static isContains = function (wholeString: string, target: string) {
+    static isContains(wholeString: string, target: string) {
         const result = wholeString.indexOf(target);
         return result > -1;
     };
@@ -71,7 +71,7 @@ export class StringHelper {
      * @param target
      * @return {boolean}
      */
-    static isEndWith(wholeString: string, target: string) {
+    static isEndWith(wholeString: string, target: string): boolean {
         return wholeString.endsWith(target);
     }
 
@@ -81,7 +81,7 @@ export class StringHelper {
      * @param target
      * @return {boolean}
      */
-    static isStartWith(wholeString: string, target: string) {
+    static isStartWith(wholeString: string, target: string): boolean {
         return wholeString.startsWith(target);
     }
 
@@ -90,7 +90,7 @@ export class StringHelper {
      * @param {*} wholeString
      * @param {*} target
      */
-    static getPosition = function (wholeString: string, target: string) {
+    static getPosition(wholeString: string, target: string) {
         return wholeString.indexOf(target);
     };
 
@@ -130,7 +130,7 @@ export class StringHelper {
      * @param placeHolders
      * @return {*}
      */
-    static format(placeHeldString: string, ...placeHolders: string[]) {
+    static format(placeHeldString: string, ...placeHolders: string[]): string {
         if (placeHolders) {
             for (let i = 0; i < placeHolders.length; i++) {
                 const reg = new RegExp(`\\{${i}\\}`, "gm");
@@ -150,13 +150,13 @@ export class StringHelper {
         return wholeString.split(separator);
     }
 
+
     /**
      * 将数组的各个元素组装为字符串（各个元素之间，置入分隔符 separator）
-     * @param {array} arrayData
+     * @param arrayData
      * @param separator
-     * @returns {*}
      */
-    static implode(arrayData: string[], separator = ","): any {
+    static implode(arrayData: string[], separator = ","): string {
         return arrayData.join(separator);
     }
 
@@ -224,7 +224,7 @@ export class StringHelper {
      * @param count
      * @returns {string}
      */
-    static multi(stringData: string, count: number) {
+    static multi(stringData: string, count: number): string {
         let result = "";
         for (let i = 0; i < count; i++) {
             result += stringData;
@@ -240,7 +240,7 @@ export class StringHelper {
      * @param {string} newDelimiter
      * @return {string}
      */
-    static splice(stringData: string, oldDelimiter: string, newDelimiter: string = "") {
+    static splice(stringData: string, oldDelimiter: string, newDelimiter: string = ""): string {
         const tempArray = StringHelper.explode(stringData, oldDelimiter);
         return StringHelper.implode(tempArray, newDelimiter);
     }
@@ -250,7 +250,7 @@ export class StringHelper {
      * @param stringData
      * @return {*}
      */
-    static removeAllSpace(stringData: string) {
+    static removeAllSpace(stringData: string): string {
         return stringData.replace(/(\s*)/g, "");
     }
 
@@ -286,16 +286,21 @@ export class StringHelper {
     }
 
     /**
-     *
+     * 两端减除
      * @param stringData
      * @param target
      */
-    static trimBoth = function (stringData: string, target: string = " ") {
+    static trimBoth(stringData: string, target: string = " ") {
         const temp = StringHelper.trimLeft(stringData, target);
         return StringHelper.trimRight(temp, target);
     }
 
-    static hello(stringData: string)   {
-        return "hello world";
+    /**
+     * 两端减除（trimBoth的别名）
+     * @param stringData
+     * @param target
+     */
+    static trim(stringData: string, target: string = " ") {
+        return StringHelper.trimBoth(stringData, target);
     }
 }

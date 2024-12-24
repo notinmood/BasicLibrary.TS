@@ -6,6 +6,8 @@
     "main": "lib/index.js",
     "//types": "types：暴露给外部的类型定义文件",
     "types": "lib/index.d.ts",
+    "//type":"本项目JavaScript代码的模块组织形式，两个取值：module和commonjs",
+    "type": "commonjs",
     "files": [
         "dist/",
         "lib/",
@@ -15,7 +17,7 @@
         "README.md"
     ],
     "scripts": {
-        "test": "mocha --require ts-node/register .test/**/*.ts",
+        "tests": "mocha --require ts-node/register .test/**/*.ts",
         "t": "mocha --require ts-node/register .test/**/*.ts",
         "build": "tsc",
         "b": "tsc",

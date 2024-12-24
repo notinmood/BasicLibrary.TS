@@ -8,10 +8,10 @@
  */
 
 export class Singleton {
-    static create = <T>(className: new () => T) => {
+    static create<T>(className: new () => T) {
         let instance: T;
-        return () => {
+        return (() => {
             return (instance ??= new className());
-        };
+        })();
     };
 }
