@@ -10,7 +10,7 @@
 import {describe, it} from "mocha";
 import {expect}       from "chai"; // 使用 Chai 进行断言
 
-import {Singleton} from "../../src/index";
+import {Singleton} from "../../src";
 import {Student}   from "../_res/student";
 
 

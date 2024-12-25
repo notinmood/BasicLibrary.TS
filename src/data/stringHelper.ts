@@ -113,6 +113,10 @@ export class StringHelper {
      * @param {*} separator
      */
     static getStringAfterSeparator(wholeString: string, separator: string) {
+        if (separator === "") {
+            return wholeString;
+        }
+
         if (StringHelper.isContains(wholeString, separator)) {
             const pos = StringHelper.getPosition(wholeString, separator) + 1;
             return wholeString.substring(pos);

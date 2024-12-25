@@ -75,7 +75,7 @@ export class ObjectHelper {
         return lastNode !== defaultValue;
     }
 
-    static _hasMemberInner(objectData: any, memberName: string) {
+    private static _hasMemberInner(objectData: any, memberName: string) {
         return memberName in objectData;
     }
 
@@ -130,7 +130,7 @@ export class ObjectHelper {
         return lastNode;
     }
 
-    static _getMemberInner(targetObject: any, propertyName: any, defaultValue: string | null = null) {
+    private static _getMemberInner(targetObject: any, propertyName: any, defaultValue: string | null = null) {
         let exist = ObjectHelper._hasMemberInner(targetObject, propertyName);
         if (exist) {
             return targetObject[propertyName];
