@@ -24,13 +24,13 @@ tsc -p./tsconfig.esm.json # 编译 es(ES6, ES2015等) 格式的 JavaScript 代�
 
 ## 类库发布流程
 1. 请调用上步的方法对代码进行编译，确保编译后代码没有错误。
-2. 使用命令`npm version patch`（或者手动）修改文件 `package.json` 中的版本号信息。
-3. 执行 `npm publish --registry=https://registry.npmjs.org` 发布代码到npm平台。
+2. 使用命令`pnpm version patch`（或者手动）修改文件 `package.json` 中的版本号信息。
+3. 执行 `pnpm publish --registry=https://registry.npmjs.org` 发布代码到npm平台。
 
 ## 类库使用说明(推荐使用pnpm代替npm)
 1. 安装依赖：`pnpm install basiclibrary.ts`
 2. 更新依赖：`pnpm update basiclibrary.ts`
-3. 类库的使用(下文中的 ***Helper 表示BL类库中的某个具体功能的类;同时请特别注意：CommonJS格式的JavaScript文件的路径为`basiclibrary.ts/lib`;格式的JavaScript文件的路径为`basiclibrary.ts/dist)`：
+3. 类库的使用(下文中的 ***Helper 表示BL类库中的某个具体功能的类;同时请特别注意：CommonJS格式的JavaScript文件的路径为`basiclibrary.ts/lib`;ES6格式的JavaScript文件的路径为`basiclibrary.ts/dist)`：
    1. TypeScript 项目中导入类库：`import { ***Helper } from 'basiclibrary.ts';`
    2. JavaScript(CommonJS) 项目中引入类库：`const { ***Helper } = require("basiclibrary.ts/lib/index");`
    3. JavaScript(ES6) 项目中引入类库：`import { StringHelper } from 'basiclibrary.ts/dist/data/stringHelper.js';` (注意1：必选引用到具体的功能类所在的js文件，并且要带上后缀名“.js”；注意2：调用方的文件扩展名最好为“.mjs“，以支持ES6模块化”,并且要在项目或者文件夹的package.json中配置`"type": "module"`)

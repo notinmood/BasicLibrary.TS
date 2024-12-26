@@ -41,7 +41,7 @@
 //         // 左侧通过添加 0 补齐 11 位
 //         totalMillisecondsHex = totalMillisecondsHex.padStart(11, "0");
 //
-//         const charID = GuidHelper.md5(GuidHelper.uniqid(true));
+//         const charID = UUIDHelper.md5(UUIDHelper.uniqid(true));
 //         totalMillisecondsHex = (totalMillisecondsHex + charID.substring(0, 21)).toUpperCase();
 //
 //         const hyphen = "-";
@@ -110,15 +110,5 @@
 //         // Implement uniqid function similar to PHP's uniqid
 //         return ""; // Placeholder
 //     }
-//
-//     // private static getStringAfterSeparator(input: string, separator: string): string {
-//     //     const index = input.indexOf(separator);
-//     //     return index !== -1 ? input.substring(index + 1) : input;
-//     // }
-//     //
-//     // private static getStringBeforeSeparator(input: string, separator: string): string {
-//     //     const index = input.indexOf(separator);
-//     //     return index !== -1 ? input.substring(0, index) : input;
-//     // }
 // }
 //
