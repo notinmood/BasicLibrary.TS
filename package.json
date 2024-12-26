@@ -1,12 +1,12 @@
 {
     "name": "basiclibrary.ts",
-    "version": "1.1.8",
+    "version": "1.1.9",
     "description": "企业级的TypeScript类库",
     "//main": "main：暴露给外部的入口文件",
     "main": "lib/index.js",
     "//types": "types：暴露给外部的类型定义文件",
     "types": "lib/index.d.ts",
-    "//type":"本项目JavaScript代码的模块组织形式，两个取值：module和commonjs",
+    "//type": "本项目JavaScript代码的模块组织形式，两个取值：module和commonjs",
     "type": "commonjs",
     "files": [
         "dist/",
