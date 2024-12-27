@@ -22,7 +22,7 @@
         "build": "tsc",
         "b": "tsc",
         "pub": "npm version patch & tsc && npm publish",
-        "p": "npm version patch & tsc && npm publish"
+        "pall": "git add . && git commit -a -m 'misc' && npm version patch & tsc -p./tsconfig.commonjs.json && tsc -p./tsconfig.esm.json && npm publish"
     },
     "repository": {
         "type": "git",
