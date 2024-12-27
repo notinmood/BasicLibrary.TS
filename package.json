@@ -21,8 +21,8 @@
         "t": "mocha --require ts-node/register .test/**/*.ts",
         "build": "tsc",
         "b": "tsc",
-        "pub": "npm version patch & tsc && npm publish",
-        "pall": "git add . && git commit -a -m 'misc' && npm version patch && tsc -p ./tsconfig.commonjs.json && tsc -p ./tsconfig.esm.json && npm publish"
+        "pub": "npm version patch & tsc && npm publish --registry=https://registry.npmjs.org",
+        "pall": "git add . && git commit -a -m 'misc' && npm version patch && tsc -p ./tsconfig.commonjs.json && tsc -p ./tsconfig.esm.json && npm publish --registry=https://registry.npmjs.org"
     },
     "repository": {
         "type": "git",
