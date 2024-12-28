@@ -164,7 +164,8 @@ export class StringHelper {
         return arrayData.join(separator);
     }
 
-    /** 将小写的方法整理成辨识度高的方法，供项目调用
+    /**
+     * 将小写的方法整理成辨识度高的方法，供项目调用
      * （因为随着时间的推移，人脑是很难记清楚系统的小写方法是toLower还是toLowerCase）
      * 将字符串转换为小写
      * @param {*} stringData
@@ -173,7 +174,8 @@ export class StringHelper {
         return stringData.toLowerCase();
     }
 
-    /** 将大写的方法整理成辨识度高的方法，供项目调用
+    /**
+     * 将大写的方法整理成辨识度高的方法，供项目调用
      * （因为随着时间的推移，人脑是很难记清楚系统的小写方法是toUpper还是toUpperCase）
      * 将字符串转换为大写
      * @param {*} stringData
@@ -259,7 +261,7 @@ export class StringHelper {
     }
 
     /**
-     *
+     * 左侧减除
      * @param stringData
      * @param target
      */

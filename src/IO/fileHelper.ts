@@ -10,6 +10,6 @@
 export class FileHelper {
     static readFile(filePath: string): string {
         // TODO: 实现读取文件内容
-        return "hello world";
+        return "hello, world!";
     }
 }
