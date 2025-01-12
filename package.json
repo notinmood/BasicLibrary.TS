@@ -1,9 +1,11 @@
 {
     "name": "basiclibrary.ts",
-    "version": "1.2.6",
+    "version": "1.2.8",
     "description": "企业级的TypeScript类库",
-    "//main": "main：暴露给外部的入口文件",
+    "//main": "main：暴露给外部的CJS模块入口文件",
     "main": "lib/index.js",
+    "//module": "module：暴露给外部的ESM模块入口文件",
+    "module": "dist/index.js",
     "//types": "types：暴露给外部的类型定义文件",
     "types": "lib/index.d.ts",
     "//type": "本项目JavaScript代码的模块组织形式，两个取值：module和commonjs",
@@ -17,13 +19,16 @@
         "README.md"
     ],
     "scripts": {
+        "lint": "eslint",
+        "lint:fix": "eslint --fix",
         "tests": "mocha --require ts-node/register tests/**/*.ts",
         "t": "mocha --require ts-node/register tests/**/*.ts",
-        "build": "tsc",
-        "b": "tsc -p ./tsconfig.commonjs.json && tsc -p ./tsconfig.esm.json",
+        "build:cjs": "tsc --project tsconfig.cjs.json",
+        "build:esm": "tsc --project tsconfig.esm.json",
+        "build": "npm run build:cjs && npm run build:esm",
+        "b": "npm run build",
         "pub": "npm version patch & tsc && npm publish --registry=https://registry.npmjs.org",
-        "r": "git add . && git commit -a -m 'misc' && npm version patch && tsc -p ./tsconfig.commonjs.json && tsc -p ./tsconfig.esm.json && npm publish --registry=https://registry.npmjs.org",
-        "release": "git add . && git commit -a -m 'misc' && npm version patch && tsc -p ./tsconfig.commonjs.json && tsc -p ./tsconfig.esm.json && npm publish --registry=https://registry.npmjs.org"
+        "release": "git add . && git commit -a -m 'misc' && npm version patch && npm run build && npm publish --registry=https://registry.npmjs.org"
     },
     "repository": {
         "type": "git",
@@ -36,41 +41,24 @@
     },
     "homepage": "https://github.com/notinmood/BasicLibrary.TS#readme",
     "devDependencies": {
-        "@types/chai": "^5.0.1",
-        "@types/mocha": "^10.0.10",
-        "@typescript-eslint/eslint-plugin": "^8.18.2",
-        "@typescript-eslint/parser": "^8.18.2",
+        "@eslint/js": "^9.18.0",
+        "@stylistic/eslint-plugin": "^2.12.1",
+        "@types/chai": "^5.0.0",
+        "@types/mocha": "^10.0.0",
+        "@typescript-eslint/eslint-plugin": "^8.18.0",
+        "@typescript-eslint/parser": "^8.18.0",
         "chai": "^5.1.2",
-        "eslint": "^9.17.0",
+        "eslint": "^9.18.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^5.2.1",
+        "globals": "^15.14.0",
         "mocha": "^11.0.1",
-        "prettier-eslint": "^16.3.0",
+        "prettier": "^3.4.2",
+        "prettier-eslint": "^16.0.0",
         "ts-node": "^10.9.2",
-        "typescript": "^5.7.2"
-    },
-    "eslintConfig": {
-        "root": true,
-        "parser": "@typescript-eslint/parser",
-        "plugins": [
-            "@typescript-eslint"
-        ],
-        "extends": [
-            "eslint:recommended",
-            "plugin:@typescript-eslint/recommended",
-            "plugin:node/recommended",
-            "prettier"
-        ],
-        "rules": {
-            "node/no-unsupported-features/es-syntax": 0,
-            "@typescript-eslint/no-explicit-any": 0,
-            "no-prototype-builtins": 2,
-            "quotes": [
-                2,
-                "double"
-            ],
-            "node/no-missing-import": 0,
-            "@typescript-eslint/no-inferrable-types": 0
-        }
+        "typescript": "^5.7.2",
+        "typescript-eslint": "^8.19.1",
+        "vitest": "^2.1.8"
     }
 }

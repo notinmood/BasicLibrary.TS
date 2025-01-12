@@ -9,10 +9,11 @@
  * Copyright (c) 2022 by Hiland & RainyTop, All Rights Reserved.
  */
 
-import {describe, it} from "mocha";
-import {expect}       from "chai"; // 使用 Chai 进行断言
+import { expect, test, describe, it } from "vitest";
+// import {expect}       from "chai";
+// import {describe, it} from "mocha";
 
-import {StringHelper} from "../../src";
+import {StringHelper} from "../../src/data/stringHelper";
 
 
 describe("StringHelper 类测试", () => {
@@ -323,7 +324,7 @@ describe("StringHelper 类测试", () => {
 
         it("边界情况：空字符串", () => {
             const invalidDate = StringHelper.convertTODateTime("");
-            expect(invalidDate.toString()).to.equal('Invalid Date');
+            expect(invalidDate.toString()).to.equal("Invalid Date");
         });
     });
 
