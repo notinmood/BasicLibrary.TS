@@ -1,12 +1,7 @@
 {
-    //    "extends"        : "./tsconfig.esm.json",
-    "include"        : [],
-    "references"     : [
-        {
-            "path": "./tsconfig.esm.json"
-        },
-        {
-            "path": "./tsconfig.commonjs.json"
-        }
-    ]
+    "extends"        : "./tsconfig.general.json",
+    "compilerOptions": {
+        "module"          : "NodeNext",
+        "moduleResolution": "NodeNext"
+    }
 }

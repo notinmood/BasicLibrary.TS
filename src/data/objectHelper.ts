@@ -50,6 +50,24 @@ export class ObjectHelper {
         return result;
     }
 
+    /**
+     * 是否存在某个Key
+     * @param objectData
+     * @param keyName
+     * @returns {boolean}
+     */
+    static hasKey(objectData: {}, keyName: string): boolean {
+        for (const objectDataKey in objectData) {
+            if (objectData.hasOwnProperty(objectDataKey)) {
+                if (objectDataKey === keyName) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
 
     /**
      * 判断一个对象内是否存在某成员
@@ -87,16 +105,16 @@ export class ObjectHelper {
      * @example:
      * 如下有对象moo
      moo= {
-         m0: 'mike',
-         m1: {},
-         m2: {
-             n1: {
-                 o: 'hello',
-                 p: function (s) {
-                    return 1 + s;
-                 }
-             }
-         },
+     m0: 'mike',
+     m1: {},
+     m2: {
+     n1: {
+     o: 'hello',
+     p: function (s) {
+     return 1 + s;
+     }
+     }
+     },
      }
 
      调用时候：

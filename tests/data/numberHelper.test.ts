@@ -9,10 +9,11 @@
  * Copyright (c) 2022 by Hiland & RainyTop, All Rights Reserved.
  */
 
-import {expect}       from "chai";
-import {describe, it} from "mocha";
+import { expect, test, describe, it } from "vitest";
+// import {expect}       from "chai";
+// import {describe, it} from "mocha";
 
-import {NumberHelper} from "../../src";
+import {NumberHelper} from "../../src/data/numberHelper";
 
 describe("NumberHelper 类型的单元测试", () => {
     describe("NumberHelper.getFloat 方法单元测试", () => {
