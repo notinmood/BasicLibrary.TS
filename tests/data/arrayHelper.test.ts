@@ -64,10 +64,10 @@ describe('ArrayHelper', () => {
     describe('sortByPropertyValue', () => {
         const arr = [{name: "zlw", age: "24"}, {name: "wlz", age: "5"}, {name: "abc", age: "10"}];
         it('按 age 升序排序', () => {
-            expect(ArrayHelper.sortByPropertyValue(arr, 'age', 'ASC')).equals([{name: "wlz", age: "5"}, {name: "abc", age: "10"}, {name: "zlw", age: "24"}]);
+            expect(ArrayHelper.sortByPropertyValue(arr, 'age', 'ASC')).deep.equals([{name: "wlz", age: "5"}, {name: "abc", age: "10"}, {name: "zlw", age: "24"}]);
         });
         it('按 age 降序排序', () => {
-            expect(ArrayHelper.sortByPropertyValue(arr, 'age', 'DESC')).equals([{name: "zlw", age: "24"}, {name: "abc", age: "10"}, {name: "wlz", age: "5"}]);
+            expect(ArrayHelper.sortByPropertyValue(arr, 'age', 'DESC')).deep.equals([{name: "zlw", age: "24"}, {name: "abc", age: "10"}, {name: "wlz", age: "5"}]);
         });
     });
 
@@ -78,7 +78,7 @@ describe('ArrayHelper', () => {
             expect(ArrayHelper.sortByPropertyLength(arr, 'name', 'ASC')).equals([{name: "abc", age: "10"}, {name: "wlz", age: "5"}, {name: "zlw", age: "24"}]);
         });
         it('按 name 降序排序', () => {
-            expect(ArrayHelper.sortByPropertyLength(arr, 'name', 'DESC')).equals([{name: "zlw", age: "24"}, {name: "abc", age: "10"}, {name: "wlz", age: "5"}]);
+            expect(ArrayHelper.sortByPropertyLength(arr, 'name', 'DESC')).deep.equals([{name: "zlw", age: "24"}, {name: "abc", age: "10"}, {name: "wlz", age: "5"}]);
         });
     });
 
@@ -89,7 +89,7 @@ describe('ArrayHelper', () => {
         const arrayC = [{ 'x': 'x1', 'y': 'y1' }, { 'x': 'x2', 'y': 'y2' }, { 'x': 'x3', 'y': 'y3' }];
 
         it('正确合并数组A和数组B', () => {
-            expect(ArrayHelper.mergeElementProperty(arrayA, arrayB)).equals([
+            expect(ArrayHelper.mergeElementProperty(arrayA, arrayB)).deep.equals([
                 {"a": "a1", "b": "b1", "m": "m1", "n": "n1"},
                 {"a": "a2", "b": "b2", "m": "m2", "n": "n2"},
                 {"a": "a3", "b": "b3", "m": "m3", "n": "n3"},
@@ -97,7 +97,7 @@ describe('ArrayHelper', () => {
             ]);
         });
         it('正确合并数组A和数组C', () => {
-            expect(ArrayHelper.mergeElementProperty(arrayA, arrayC)).equals([
+            expect(ArrayHelper.mergeElementProperty(arrayA, arrayC)).deep.equals([
                 {"a": "a1", "b": "b1", "x": "x1", "y": "y1"},
                 {"a": "a2", "b": "b2", "x": "x2", "y": "y2"},
                 {"a": "a3", "b": "b3", "x": "x3", "y": "y3"},
@@ -105,10 +105,10 @@ describe('ArrayHelper', () => {
             ]);
         });
         it('主数组为空时返回空数组', () => {
-            expect(ArrayHelper.mergeElementProperty([], arrayB)).equals([]);
+            expect(ArrayHelper.mergeElementProperty([], arrayB)).empty;
         });
         it('合并数组为空时返回主数组', () => {
-            expect(ArrayHelper.mergeElementProperty(arrayA, [])).equals(arrayA);
+            expect(ArrayHelper.mergeElementProperty(arrayA, [])).deep.equals(arrayA);
         });
     });
 
@@ -119,35 +119,35 @@ describe('ArrayHelper', () => {
         const arr3 = {key: 'value'};
 
         it('正确合并多个数组', () => {
-            expect(ArrayHelper.concat(arr1, arr2)).equals([1, 2, 3, 'a', 'b']);
+            expect(ArrayHelper.concat(arr1, arr2)).deep.equals([1, 2, 3, 'a', 'b']);
         });
         it('正确处理关联数组', () => {
-            expect(ArrayHelper.concat(arr1, arr3)).equals([1, 2, 3, {key: 'value'}]);
+            expect(ArrayHelper.concat(arr1, arr3)).deep.equals([1, 2, 3, { key: 'value' }]);
         });
         it('空数组合并返回空数组', () => {
-            expect(ArrayHelper.concat([])).equals([]);
+            expect(ArrayHelper.concat([])).empty;
         });
         it('合并空数组不影响结果', () => {
-            expect(ArrayHelper.concat(arr1, [])).equals(arr1);
+            expect(ArrayHelper.concat(arr1, [])).deep.equals(arr1);
         });
         it('merge 是 concat 的别名', () => {
-            expect(ArrayHelper.merge(arr1, arr2)).equals(ArrayHelper.concat(arr1, arr2));
+            expect(ArrayHelper.merge(arr1, arr2)).deep.equals(ArrayHelper.concat(arr1, arr2));
         });
     });
 
     // 测试 explode 方法
     describe('explode', () => {
         it('按默认分隔符分割字符串', () => {
-            expect(ArrayHelper.explode('1,2,3')).equals(['1', '2', '3']);
+            expect(ArrayHelper.explode('1,2,3')).deep.equals(['1', '2', '3']);
         });
         it('按指定分隔符分割字符串', () => {
-            expect(ArrayHelper.explode('1-2-3', '-')).equals(['1', '2', '3']);
+            expect(ArrayHelper.explode('1-2-3', '-')).deep.equals(['1', '2', '3']);
         });
         it('空字符串返回空数组', () => {
             expect(ArrayHelper.explode('')).equals([]);
         });
         it('单个元素不带分隔符返回单个元素数组', () => {
-            expect(ArrayHelper.explode('abc')).equals(['abc']);
+            expect(ArrayHelper.explode('abc')).deep.equals(['abc']);
         });
     });
 
@@ -173,11 +173,11 @@ describe('ArrayHelper', () => {
 
         it('正确添加单个元素到数组头部', () => {
             expect(ArrayHelper.addHead(arr, 1)).equals(4);
-            expect(arr).equals([1, 2, 3, 4]);
+            expect(arr).deep.equals([1, 2, 3, 4]);
         });
         it('正确添加多个元素到数组头部', () => {
             expect(ArrayHelper.addHead(arr, 5, 6)).equals(6);
-            expect(arr).equals([5, 6, 1, 2, 3, 4]);
+            expect(arr).deep.equals([5, 6, 1, 2, 3, 4]);
         });
         it('空数组添加元素后长度正确', () => {
             expect(ArrayHelper.addHead([], 1, 2)).equals(2);
@@ -200,11 +200,11 @@ describe('ArrayHelper', () => {
 
         it('正确添加单个元素到数组尾部', () => {
             expect(ArrayHelper.addTail(arr, 4)).equals(4);
-            expect(arr).equals([1, 2, 3, 4]);
+            expect(arr).deep.equals([1, 2, 3, 4]);
         });
         it('正确添加多个元素到数组尾部', () => {
             expect(ArrayHelper.addTail(arr, 5, 6)).equals(6);
-            expect(arr).equals([1, 2, 3, 4, 5, 6]);
+            expect(arr).deep.equals([1, 2, 3, 4, 5, 6]);
         });
         it('空数组添加元素后长度正确', () => {
             expect(ArrayHelper.addTail([], 1, 2)).equals(2);

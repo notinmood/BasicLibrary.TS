@@ -11,28 +11,28 @@ describe("ObjectHelper", () => {
         const obj1 = { a: 1, b: 2 };
         const obj2 = { b: 3, c: 4 };
         const result = ObjectHelper.combine(obj1, obj2);
-        expect(result).equals({ a: 1, b: 2, c: 4 });
+        expect(result).deep.equals({ a: 1, b: 2, c: 4 });
     });
 
     it("combine方法-第一个对象为空", () => {
         const obj1 = {};
         const obj2 = { a: 1, b: 2 };
         const result = ObjectHelper.combine(obj1, obj2);
-        expect(result).equals({ a: 1, b: 2 });
+        expect(result).deep.equals({ a: 1, b: 2 });
     });
 
     it("combine方法-第二个对象为空", () => {
         const obj1 = { a: 1, b: 2 };
         const obj2 = {};
         const result = ObjectHelper.combine(obj1, obj2);
-        expect(result).equals({ a: 1, b: 2 });
+        expect(result).deep.equals({ a: 1, b: 2 });
     });
 
     it("combine方法-两个对象都为空", () => {
         const obj1 = {};
         const obj2 = {};
         const result = ObjectHelper.combine(obj1, obj2);
-        expect(result).equals({});
+        expect(result).empty;
     });
 
     // combineAll方法测试
@@ -41,23 +41,23 @@ describe("ObjectHelper", () => {
         const obj2 = { b: 3, c: 4 };
         const obj3 = { c: 5, d: 6 };
         const result = ObjectHelper.combineAll(obj1, obj2, obj3);
-        expect(result).equals({ a: 1, b: 3, c: 5, d: 6 });
+        expect(result).deep.equals({ a: 1, b: 3, c: 5, d: 6 });
     });
 
     it("combineAll方法-传入空数组", () => {
         const result = ObjectHelper.combineAll();
-        expect(result).equals({});
+        expect(result).empty;
     });
 
     it("combineAll方法-传入一个对象", () => {
         const obj1 = { a: 1, b: 2 };
         const result = ObjectHelper.combineAll(obj1);
-        expect(result).equals({ a: 1, b: 2 });
+        expect(result).deep.equals({ a: 1, b: 2 });
     });
 
     it("combineAll方法-传入多个空对象", () => {
         const result = ObjectHelper.combineAll({}, {}, {});
-        expect(result).equals({});
+        expect(result).deep.equals({});
     });
 
     // hasKey方法测试
@@ -117,28 +117,28 @@ describe("ObjectHelper", () => {
         const obj1 = { a: 1, b: { c: 2 } };
         const obj2 = { b: { c: 3, d: 4 }, e: 5 };
         const result = ObjectHelper.assignDeeply(obj1, obj2);
-        expect(result).equals({ a: 1, b: { c: 3, d: 4 }, e: 5 });
+        expect(result).deep.equals({ a: 1, b: { c: 3, d: 4 }, e: 5 });
     });
 
     it("assignDeeply方法-第一个对象为空", () => {
         const obj1 = {};
         const obj2 = { a: 1, b: { c: 2 } };
         const result = ObjectHelper.assignDeeply(obj1, obj2);
-        expect(result).equals({ a: 1, b: { c: 2 } });
+        expect(result).deep.equals({ a: 1, b: { c: 2 } });
     });
 
     it("assignDeeply方法-第二个对象为空", () => {
         const obj1 = { a: 1, b: { c: 2 } };
         const obj2 = {};
         const result = ObjectHelper.assignDeeply(obj1, obj2);
-        expect(result).equals({ a: 1, b: { c: 2 } });
+        expect(result).deep.equals({ a: 1, b: { c: 2 } });
     });
 
     it("assignDeeply方法-两个对象都为空", () => {
         const obj1 = {};
         const obj2 = {};
         const result = ObjectHelper.assignDeeply(obj1, obj2);
-        expect(result).equals({});
+        expect(result).deep.equals({});
     });
 
     // getMemberCount方法测试
