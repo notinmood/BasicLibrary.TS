@@ -42,7 +42,7 @@ pnpm build
 1. 请调用上步的方法对代码进行编译，确保编译后代码没有错误。
 2. 使用命令`npm version patch`（或者手动）修改文件 `package.json` 中的版本号信息。
 3. 执行 `npm publish --registry=https://registry.npmjs.org` 发布代码到npm平台。
->>> 以上工作可以使用统一的命令完成：`npm run release`
+>>> 以上工作可以使用统一的命令完成：`npm run release`或者`pnpm run release`
 
 
 ## 类库使用说明(推荐使用pnpm代替npm)
