@@ -108,6 +108,5 @@ dist
 #/lib
 /lib/
 /lib
-/pnpm-lock.yaml
 /.idea/deployment.xml
 /.idea/GitCommitMessageStorage.xml
