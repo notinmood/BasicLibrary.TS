@@ -24,7 +24,7 @@
         "build": "npm run build:cjs && npm run build:esm",
         "b": "npm run build",
         "pub": "npm version patch & tsc && npm publish --registry=https://registry.npmjs.org",
-        "release": "git add . && git commit -a -m 'misc' && npm version patch && tsc -p ./tsconfig.commonjs.json && tsc -p ./tsconfig.esm.json && npm publish --registry=https://registry.npmjs.org"
+        "release": "git add . && git commit -a -m 'misc' && npm version patch && npm run build && npm publish --registry=https://registry.npmjs.org"
     },
     "repository": {
         "type": "git",
