@@ -19,8 +19,10 @@
     "scripts": {
         "tests": "mocha --require ts-node/register tests/**/*.ts",
         "t": "mocha --require ts-node/register tests/**/*.ts",
-        "build": "tsc",
-        "b": "tsc",
+        "build:cjs": "tsc --project tsconfig.cjs.json",
+        "build:esm": "tsc --project tsconfig.esm.json",
+        "build": "npm run build:cjs && npm run build:esm",
+        "b": "npm run build",
         "pub": "npm version patch & tsc && npm publish --registry=https://registry.npmjs.org",
         "release": "git add . && git commit -a -m 'misc' && npm version patch && tsc -p ./tsconfig.commonjs.json && tsc -p ./tsconfig.esm.json && npm publish --registry=https://registry.npmjs.org"
     },

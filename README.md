@@ -29,8 +29,13 @@
 默认情况下，WebStorm 会自动编译 TypeScript 代码成为 JavaScript 代码，编译时候会使用`tsconfig.json`中的配置信息。
 如果要编译指定类型的JavaScript代码，可以在WebStorm的终端中执行以下命令：
 ```shell
-tsc -p./tsconfig.commonjs.json # 编译 commonjs 格式的 JavaScript 代码
+tsc -p./tsconfig.cjs.json # 编译 commonjs 格式的 JavaScript 代码
 tsc -p./tsconfig.esm.json # 编译 es(ES6, ES2015等) 格式的 JavaScript 代码
+//或者执行
+pnpm build:cjs
+pnpm build:esm
+//或者执行以下命令，同时编译两者
+pnpm build
 ```
 
 ## 类库发布流程
